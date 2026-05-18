@@ -12,7 +12,7 @@ export type PastOrder = {
   subtotal: number;
   delivery: number;
   total: number;
-  deliveredInMin: number;
+  deliveredInMin?: number;
   rating?: number;
 };
 
