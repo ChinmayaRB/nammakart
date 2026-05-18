@@ -1,9 +1,10 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, ShoppingCart, MapPin, Sun, Moon, Menu, X, Sparkles, Heart, User } from "lucide-react";
+import { Search, ShoppingCart, MapPin, Sun, Moon, Menu, X, Sparkles, Heart, LogIn } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useCart } from "@/store/cart";
 import { useTheme } from "@/store/theme";
+import { useAuth } from "@/store/auth";
 import { Button } from "@/components/ui/button";
 
 const nav = [
@@ -14,7 +15,9 @@ const nav = [
 
 export function SiteHeader({ variant = "default" }: { variant?: "default" | "landing" }) {
   const items = useCart((s) => s.items);
+  const wishCount = useCart((s) => s.wishlist.length);
   const count = items.reduce((s, i) => s + i.qty, 0);
+  const user = useAuth((s) => s.user);
   const { theme, toggle } = useTheme();
   const pathname = useRouterState({ select: (r) => r.location.pathname });
   const [scrolled, setScrolled] = useState(false);
@@ -88,9 +91,16 @@ export function SiteHeader({ variant = "default" }: { variant?: "default" | "lan
               <Search className="h-5 w-5" />
             </Button>
           </Link>
-          <Button variant="ghost" size="icon" aria-label="Wishlist" className="hidden md:inline-flex">
-            <Heart className="h-5 w-5" />
-          </Button>
+          <Link to="/favorites" className="hidden md:block">
+            <Button variant="ghost" size="icon" aria-label="Wishlist" className="relative">
+              <Heart className="h-5 w-5" />
+              {wishCount > 0 && (
+                <span className="absolute -right-0.5 -top-0.5 grid h-5 min-w-5 place-items-center rounded-full bg-primary px-1 text-[10px] font-bold text-primary-foreground">
+                  {wishCount}
+                </span>
+              )}
+            </Button>
+          </Link>
           <Button variant="ghost" size="icon" aria-label="Toggle theme" onClick={toggle}>
             <AnimatePresence mode="wait" initial={false}>
               <motion.span
@@ -122,9 +132,21 @@ export function SiteHeader({ variant = "default" }: { variant?: "default" | "lan
               </AnimatePresence>
             </Button>
           </Link>
-          <Button variant="ghost" size="icon" className="hidden md:inline-flex" aria-label="Account">
-            <User className="h-5 w-5" />
-          </Button>
+          {user ? (
+            <Link to="/profile" className="hidden md:block">
+              <Button variant="ghost" size="icon" aria-label="Account">
+                <div className="grid h-7 w-7 place-items-center rounded-full gradient-hero text-[11px] font-bold text-primary-foreground">
+                  {user.name.split(" ").map((p) => p[0]).join("").slice(0, 2).toUpperCase()}
+                </div>
+              </Button>
+            </Link>
+          ) : (
+            <Link to="/login" className="hidden md:block">
+              <Button variant="ghost" size="sm" className="gap-1.5">
+                <LogIn className="h-4 w-4" /> Sign in
+              </Button>
+            </Link>
+          )}
           <Button variant="ghost" size="icon" className="md:hidden" onClick={() => setOpen((o) => !o)} aria-label="Menu">
             {open ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}
           </Button>
