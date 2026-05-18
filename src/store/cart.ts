@@ -8,6 +8,7 @@ type CartState = {
   items: CartItem[];
   wishlist: string[];
   add: (p: Product) => void;
+  addMany: (entries: { product: Product; qty: number }[]) => void;
   remove: (id: string) => void;
   setQty: (id: string, qty: number) => void;
   toggleWish: (id: string) => void;
@@ -24,6 +25,16 @@ export const useCart = create<CartState>()(
           const found = s.items.find((i) => i.product.id === p.id);
           if (found) return { items: s.items.map((i) => (i.product.id === p.id ? { ...i, qty: i.qty + 1 } : i)) };
           return { items: [...s.items, { product: p, qty: 1 }] };
+        }),
+      addMany: (entries) =>
+        set((s) => {
+          const map = new Map(s.items.map((i) => [i.product.id, { ...i }]));
+          for (const e of entries) {
+            const found = map.get(e.product.id);
+            if (found) found.qty += e.qty;
+            else map.set(e.product.id, { product: e.product, qty: e.qty });
+          }
+          return { items: Array.from(map.values()) };
         }),
       remove: (id) => set((s) => ({ items: s.items.filter((i) => i.product.id !== id) })),
       setQty: (id, qty) =>

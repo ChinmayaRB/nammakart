@@ -11,6 +11,7 @@
 import { Route as rootRouteImport } from './routes/__root'
 import { Route as SignupRouteImport } from './routes/signup'
 import { Route as ProfileRouteImport } from './routes/profile'
+import { Route as OrdersRouteImport } from './routes/orders'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as HomeRouteImport } from './routes/home'
 import { Route as FavoritesRouteImport } from './routes/favorites'
@@ -28,6 +29,11 @@ const SignupRoute = SignupRouteImport.update({
 const ProfileRoute = ProfileRouteImport.update({
   id: '/profile',
   path: '/profile',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const OrdersRoute = OrdersRouteImport.update({
+  id: '/orders',
+  path: '/orders',
   getParentRoute: () => rootRouteImport,
 } as any)
 const LoginRoute = LoginRouteImport.update({
@@ -80,6 +86,7 @@ export interface FileRoutesByFullPath {
   '/favorites': typeof FavoritesRoute
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
+  '/orders': typeof OrdersRoute
   '/profile': typeof ProfileRoute
   '/signup': typeof SignupRoute
 }
@@ -92,6 +99,7 @@ export interface FileRoutesByTo {
   '/favorites': typeof FavoritesRoute
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
+  '/orders': typeof OrdersRoute
   '/profile': typeof ProfileRoute
   '/signup': typeof SignupRoute
 }
@@ -105,6 +113,7 @@ export interface FileRoutesById {
   '/favorites': typeof FavoritesRoute
   '/home': typeof HomeRoute
   '/login': typeof LoginRoute
+  '/orders': typeof OrdersRoute
   '/profile': typeof ProfileRoute
   '/signup': typeof SignupRoute
 }
@@ -119,6 +128,7 @@ export interface FileRouteTypes {
     | '/favorites'
     | '/home'
     | '/login'
+    | '/orders'
     | '/profile'
     | '/signup'
   fileRoutesByTo: FileRoutesByTo
@@ -131,6 +141,7 @@ export interface FileRouteTypes {
     | '/favorites'
     | '/home'
     | '/login'
+    | '/orders'
     | '/profile'
     | '/signup'
   id:
@@ -143,6 +154,7 @@ export interface FileRouteTypes {
     | '/favorites'
     | '/home'
     | '/login'
+    | '/orders'
     | '/profile'
     | '/signup'
   fileRoutesById: FileRoutesById
@@ -156,6 +168,7 @@ export interface RootRouteChildren {
   FavoritesRoute: typeof FavoritesRoute
   HomeRoute: typeof HomeRoute
   LoginRoute: typeof LoginRoute
+  OrdersRoute: typeof OrdersRoute
   ProfileRoute: typeof ProfileRoute
   SignupRoute: typeof SignupRoute
 }
@@ -174,6 +187,13 @@ declare module '@tanstack/react-router' {
       path: '/profile'
       fullPath: '/profile'
       preLoaderRoute: typeof ProfileRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/orders': {
+      id: '/orders'
+      path: '/orders'
+      fullPath: '/orders'
+      preLoaderRoute: typeof OrdersRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/login': {
@@ -244,6 +264,7 @@ const rootRouteChildren: RootRouteChildren = {
   FavoritesRoute: FavoritesRoute,
   HomeRoute: HomeRoute,
   LoginRoute: LoginRoute,
+  OrdersRoute: OrdersRoute,
   ProfileRoute: ProfileRoute,
   SignupRoute: SignupRoute,
 }
