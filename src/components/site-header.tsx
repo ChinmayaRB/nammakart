@@ -1,6 +1,6 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
-import { Search, ShoppingCart, MapPin, Sun, Moon, Menu, X, Sparkles, Heart, User, LogIn } from "lucide-react";
+import { Search, ShoppingCart, MapPin, Sun, Moon, Menu, X, Sparkles, Heart, LogIn } from "lucide-react";
 import { useEffect, useState } from "react";
 import { useCart } from "@/store/cart";
 import { useTheme } from "@/store/theme";
