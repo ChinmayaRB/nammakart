@@ -37,7 +37,7 @@ function ProfilePage() {
   ];
 
   const menu = [
-    { icon: Package, label: "My Orders", desc: "Track and reorder", to: "/home" as const },
+    { icon: Package, label: "My Orders", desc: "Track and reorder", to: "/orders" as const },
     { icon: Heart, label: "Favorites", desc: `${wishlistCount} saved items`, to: "/favorites" as const },
     { icon: MapPin, label: "Addresses", desc: "Manage delivery locations", to: "/profile" as const },
     { icon: CreditCard, label: "Payment methods", desc: "Cards, UPI & wallets", to: "/profile" as const },
