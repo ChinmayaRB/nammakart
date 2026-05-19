@@ -40,20 +40,20 @@ export const categories = [
 ];
 
 export const products: Product[] = [
-  { id: "p1", name: "Alphonso Mangoes", brand: "Farm Fresh", price: 349, mrp: 499, unit: "1 kg", eta: "8 min", rating: 4.8, category: "fruits", emoji: "🥭", tag: "Bestseller" },
-  { id: "p2", name: "Avocado Hass", brand: "Imported", price: 199, mrp: 249, unit: "2 pcs", eta: "8 min", rating: 4.6, category: "fruits", emoji: "🥑", tag: "Organic" },
+  { id: "p1", name: "Alphonso Mangoes", brand: "Farm Fresh", price: 349, mrp: 499, unit: "1 kg", eta: "10 min", rating: 4.8, category: "fruits", emoji: "🥭", tag: "Bestseller" },
+  { id: "p2", name: "Avocado Hass", brand: "Imported", price: 199, mrp: 249, unit: "2 pcs", eta: "10 min", rating: 4.6, category: "fruits", emoji: "🥑", tag: "Organic" },
   { id: "p3", name: "Strawberries", brand: "Mahabaleshwar", price: 159, mrp: 199, unit: "250 g", eta: "10 min", rating: 4.7, category: "fruits", emoji: "🍓", tag: "New" },
-  { id: "p4", name: "Bananas Robusta", brand: "Local", price: 49, mrp: 69, unit: "1 dozen", eta: "8 min", rating: 4.5, category: "fruits", emoji: "🍌" },
+  { id: "p4", name: "Bananas Robusta", brand: "Local", price: 49, mrp: 69, unit: "1 dozen", eta: "10 min", rating: 4.5, category: "fruits", emoji: "🍌" },
   { id: "p5", name: "Broccoli", brand: "Farm Fresh", price: 89, mrp: 120, unit: "500 g", eta: "10 min", rating: 4.4, category: "veg", emoji: "🥦", tag: "Organic" },
-  { id: "p6", name: "Cherry Tomatoes", brand: "Hydroponic", price: 79, mrp: 99, unit: "250 g", eta: "8 min", rating: 4.6, category: "veg", emoji: "🍅" },
+  { id: "p6", name: "Cherry Tomatoes", brand: "Hydroponic", price: 79, mrp: 99, unit: "250 g", eta: "10 min", rating: 4.6, category: "veg", emoji: "🍅" },
   { id: "p7", name: "Bell Pepper Mix", brand: "Premium", price: 129, mrp: 159, unit: "3 pcs", eta: "10 min", rating: 4.5, category: "veg", emoji: "🫑" },
-  { id: "p8", name: "Full Cream Milk", brand: "Amul Gold", price: 68, mrp: 70, unit: "1 L", eta: "6 min", rating: 4.9, category: "dairy", emoji: "🥛", tag: "Bestseller" },
-  { id: "p9", name: "Free Range Eggs", brand: "Happy Hens", price: 159, mrp: 199, unit: "12 pcs", eta: "8 min", rating: 4.8, category: "dairy", emoji: "🥚", tag: "Organic" },
+  { id: "p8", name: "Full Cream Milk", brand: "Amul Gold", price: 68, mrp: 70, unit: "1 L", eta: "10 min", rating: 4.9, category: "dairy", emoji: "🥛", tag: "Bestseller" },
+  { id: "p9", name: "Free Range Eggs", brand: "Happy Hens", price: 159, mrp: 199, unit: "12 pcs", eta: "10 min", rating: 4.8, category: "dairy", emoji: "🥚", tag: "Organic" },
   { id: "p10", name: "Artisan Sourdough", brand: "Theobroma", price: 220, mrp: 260, unit: "400 g", eta: "12 min", rating: 4.7, category: "bakery", emoji: "🥖", tag: "New" },
   { id: "p11", name: "Butter Croissant", brand: "L'Opera", price: 89, mrp: 110, unit: "2 pcs", eta: "12 min", rating: 4.6, category: "bakery", emoji: "🥐" },
-  { id: "p12", name: "Dark Chocolate 70%", brand: "Lindt", price: 299, mrp: 350, unit: "100 g", eta: "8 min", rating: 4.9, category: "snacks", emoji: "🍫", tag: "Flash" },
-  { id: "p13", name: "Cold Brew Coffee", brand: "Blue Tokai", price: 180, mrp: 220, unit: "250 ml", eta: "8 min", rating: 4.7, category: "drinks", emoji: "☕" },
-  { id: "p14", name: "Sparkling Water", brand: "Perrier", price: 199, mrp: 240, unit: "750 ml", eta: "8 min", rating: 4.5, category: "drinks", emoji: "💧" },
+  { id: "p12", name: "Dark Chocolate 70%", brand: "Lindt", price: 299, mrp: 350, unit: "100 g", eta: "10 min", rating: 4.9, category: "snacks", emoji: "🍫", tag: "Flash" },
+  { id: "p13", name: "Cold Brew Coffee", brand: "Blue Tokai", price: 180, mrp: 220, unit: "250 ml", eta: "10 min", rating: 4.7, category: "drinks", emoji: "☕" },
+  { id: "p14", name: "Sparkling Water", brand: "Perrier", price: 199, mrp: 240, unit: "750 ml", eta: "10 min", rating: 4.5, category: "drinks", emoji: "💧" },
   { id: "p15", name: "Atlantic Salmon", brand: "Fresh Catch", price: 599, mrp: 749, unit: "300 g", eta: "15 min", rating: 4.8, category: "meat", emoji: "🐟", tag: "Bestseller" },
   { id: "p16", name: "Organic Honey", brand: "Conscious Food", price: 449, mrp: 549, unit: "500 g", eta: "10 min", rating: 4.9, category: "snacks", emoji: "🍯", tag: "Organic" },
 ];
@@ -77,7 +77,7 @@ export const categoryShare = [
 ];
 
 export const liveOrders = [
-  { id: "#NK-8421", customer: "Aarav S.", items: 7, total: 1240, status: "Packing", eta: "6 min", area: "Indiranagar" },
+  { id: "#NK-8421", customer: "Aarav S.", items: 7, total: 1240, status: "Packing", eta: "10 min", area: "Indiranagar" },
   { id: "#NK-8420", customer: "Priya M.", items: 3, total: 480, status: "Out for delivery", eta: "2 min", area: "Koramangala" },
   { id: "#NK-8419", customer: "Rohan K.", items: 12, total: 2150, status: "Picking", eta: "9 min", area: "HSR Layout" },
   { id: "#NK-8418", customer: "Sneha R.", items: 5, total: 720, status: "Delivered", eta: "—", area: "Whitefield" },
