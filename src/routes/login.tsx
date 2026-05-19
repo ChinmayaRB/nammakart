@@ -11,8 +11,8 @@ import { useAuth } from "@/store/auth";
 export const Route = createFileRoute("/login")({
   head: () => ({
     meta: [
-      { title: "Sign in — NammaKart AI" },
-      { name: "description", content: "Sign in to your NammaKart AI account to access orders, favorites and faster checkout." },
+      { title: "Sign in — KnightKart" },
+      { name: "description", content: "Sign in to your KnightKart account to access orders, favorites and faster checkout." },
     ],
   }),
   component: LoginPage,
@@ -52,18 +52,18 @@ function LoginPage() {
         >
           <div className="flex items-center gap-2">
             <Sparkles className="h-5 w-5" />
-            <span className="font-display text-lg font-bold">NammaKart AI</span>
+            <span className="font-display text-lg font-bold">KnightKart</span>
           </div>
           <div>
             <h2 className="font-display text-4xl font-bold leading-tight">
-              Groceries in 8 minutes, powered by AI.
+              Groceries in 10 minutes, powered by AI.
             </h2>
             <p className="mt-4 text-sm opacity-90">
               Smart bundles, predictive restock, and ultra-fresh produce — delivered at your door.
             </p>
           </div>
           <div className="grid grid-cols-3 gap-3 text-center text-xs">
-            {["8 min ETA", "50k+ SKUs", "4.9★ rated"].map((t) => (
+            {["10 min ETA", "50k+ SKUs", "4.9★ rated"].map((t) => (
               <div key={t} className="rounded-xl bg-white/10 px-3 py-2 backdrop-blur">{t}</div>
             ))}
           </div>
@@ -113,7 +113,7 @@ function LoginPage() {
           </div>
 
           <p className="mt-6 text-center text-sm text-muted-foreground">
-            New to NammaKart?{" "}
+            New to KnightKart?{" "}
             <Link to="/signup" className="font-semibold text-primary hover:underline">
               Create an account
             </Link>

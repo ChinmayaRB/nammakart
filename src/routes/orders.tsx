@@ -24,8 +24,8 @@ import { pastOrders, resolveItem, type PastOrder } from "@/lib/past-orders";
 export const Route = createFileRoute("/orders")({
   head: () => ({
     meta: [
-      { title: "Order History — NammaKart AI" },
-      { name: "description", content: "Review your NammaKart AI past orders and reorder in one tap." },
+      { title: "Order History — KnightKart" },
+      { name: "description", content: "Review your KnightKart past orders and reorder in one tap." },
     ],
   }),
   component: OrdersPage,

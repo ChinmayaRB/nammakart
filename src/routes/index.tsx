@@ -11,14 +11,14 @@ export const Route = createFileRoute("/")({
   component: Landing,
   head: () => ({
     meta: [
-      { title: "NammaKart AI — 10-min Groceries, AI-Smart" },
-      { name: "description", content: "AI-powered instant grocery & smart commerce. Fresh produce delivered in 8 minutes." },
+      { title: "KnightKart — 10-min Groceries, AI-Smart" },
+      { name: "description", content: "AI-powered instant grocery & smart commerce. Fresh produce delivered in 10 minutes." },
     ],
   }),
 });
 
 const stats = [
-  { value: "8 min", label: "Avg. delivery" },
+  { value: "10 min", label: "Avg. delivery" },
   { value: "12M+", label: "Orders shipped" },
   { value: "2,400+", label: "Dark stores" },
   { value: "4.9★", label: "App rating" },
@@ -37,7 +37,7 @@ const faqs = [
   { q: "How is delivery this fast?", a: "We operate hyper-local dark stores within 2km of every customer, so the cart is packed before you finish checking out." },
   { q: "Are prices higher for speed?", a: "No. We match supermarket pricing on staples and beat it on fresh produce via direct farm partnerships." },
   { q: "Where do you currently operate?", a: "Bengaluru, Hyderabad, Mumbai, Delhi NCR and Chennai. New cities every quarter." },
-  { q: "What's NammaKart Pro?", a: "Free unlimited delivery, 10% extra cashback, and exclusive access to flash drops — for ₹99/month." },
+  { q: "What's KnightKart Pro?", a: "Free unlimited delivery, 10% extra cashback, and exclusive access to flash drops — for ₹99/month." },
 ];
 
 function Landing() {
@@ -72,7 +72,7 @@ function Landing() {
               transition={{ delay: 0.05 }}
               className="mt-5 font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
             >
-              Groceries in <span className="text-gradient">8 minutes</span>.
+              Groceries in <span className="text-gradient">10 minutes</span>.
               <br />
               Smarter every order.
             </motion.h1>
@@ -82,7 +82,7 @@ function Landing() {
               transition={{ delay: 0.1 }}
               className="mt-5 max-w-lg text-lg text-muted-foreground"
             >
-              NammaKart AI learns your kitchen, predicts your week and stocks your dark store before you tap "add to cart".
+              KnightKart learns your kitchen, predicts your week and stocks your dark store before you tap "add to cart".
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -132,7 +132,7 @@ function Landing() {
                   <span>● ●</span>
                 </div>
                 <p className="mt-3 text-[10px] uppercase opacity-80">Delivering to</p>
-                <p className="text-sm font-bold">Indiranagar · 8 min</p>
+                <p className="text-sm font-bold">Indiranagar · 10 min</p>
                 <div className="mt-4 grid grid-cols-2 gap-2">
                   {["🥭","🥑","🥛","🍓","🥖","🍫"].map((e, i) => (
                     <motion.div
@@ -276,7 +276,7 @@ function Landing() {
                 Tap. Predict. Delivered.
               </h2>
               <p className="mt-4 max-w-md opacity-90">
-                The full power of NammaKart in your pocket. Voice search, instant reorders, live tracking on a buttery map.
+                The full power of KnightKart in your pocket. Voice search, instant reorders, live tracking on a buttery map.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <button className="flex items-center gap-3 rounded-2xl bg-foreground px-5 py-3 text-background">

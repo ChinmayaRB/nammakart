@@ -57,7 +57,7 @@ export function SiteHeader({ variant = "default" }: { variant?: "default" | "lan
 
         <div className="ml-2 hidden items-center gap-1 rounded-full bg-muted/60 px-3 py-1.5 text-xs lg:flex">
           <MapPin className="h-3.5 w-3.5 text-primary" />
-          <span className="font-medium">Delivery in 8 min</span>
+          <span className="font-medium">Delivery in 10 min</span>
           <span className="text-muted-foreground">· Indiranagar</span>
         </div>
 

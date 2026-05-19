@@ -10,7 +10,7 @@ import { useAuth } from "@/store/auth";
 import { useCart } from "@/store/cart";
 
 export const Route = createFileRoute("/profile")({
-  head: () => ({ meta: [{ title: "Your Profile — NammaKart AI" }] }),
+  head: () => ({ meta: [{ title: "Your Profile — KnightKart" }] }),
   component: ProfilePage,
 });
 
