@@ -51,7 +51,7 @@ export function SiteHeader({ variant = "default" }: { variant?: "default" | "lan
             <Sparkles className="h-5 w-5" />
           </motion.div>
           <span className="font-display text-lg font-bold tracking-tight">
-            Namma<span className="text-gradient">Kart</span>
+            Knight<span className="text-gradient">Kart</span>
           </span>
         </Link>
 
