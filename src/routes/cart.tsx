@@ -8,7 +8,7 @@ import { useCart, cartTotals } from "@/store/cart";
 
 export const Route = createFileRoute("/cart")({
   component: CartPage,
-  head: () => ({ meta: [{ title: "Your cart — NammaKart AI" }] }),
+  head: () => ({ meta: [{ title: "Your cart — KnightKart" }] }),
 });
 
 function CartPage() {
@@ -20,7 +20,7 @@ function CartPage() {
       <SiteHeader />
       <main className="mx-auto max-w-6xl px-4 pb-20 pt-8 sm:px-6">
         <h1 className="font-display text-4xl font-bold">Your cart</h1>
-        <p className="mt-2 text-muted-foreground">{items.length} item{items.length === 1 ? "" : "s"} · delivering in 8 min</p>
+        <p className="mt-2 text-muted-foreground">{items.length} item{items.length === 1 ? "" : "s"} · delivering in 10 min</p>
 
         {items.length === 0 ? (
           <motion.div
@@ -108,7 +108,7 @@ function CartPage() {
               </div>
 
               <div className="rounded-2xl border border-border bg-card p-5 text-xs">
-                <div className="flex items-center gap-2 text-success"><Truck className="h-4 w-4" /><span className="font-semibold">Delivery in 8 min</span></div>
+                <div className="flex items-center gap-2 text-success"><Truck className="h-4 w-4" /><span className="font-semibold">Delivery in 10 min</span></div>
                 <div className="mt-2 flex items-center gap-2 text-muted-foreground"><ShieldCheck className="h-4 w-4" /><span>100% quality assured · easy refunds</span></div>
               </div>
             </aside>

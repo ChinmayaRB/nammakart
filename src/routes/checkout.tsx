@@ -9,11 +9,11 @@ import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/checkout")({
   component: CheckoutPage,
-  head: () => ({ meta: [{ title: "Checkout — NammaKart AI" }] }),
+  head: () => ({ meta: [{ title: "Checkout — KnightKart" }] }),
 });
 
 const addresses = [
-  { id: "home", label: "Home", line: "302, Indus Apartments, 80 Feet Rd, Indiranagar, Bengaluru 560038", eta: "8 min" },
+  { id: "home", label: "Home", line: "302, Indus Apartments, 80 Feet Rd, Indiranagar, Bengaluru 560038", eta: "10 min" },
   { id: "work", label: "Work", line: "WeWork Galaxy, Residency Rd, Bengaluru 560025", eta: "12 min" },
 ];
 
@@ -55,7 +55,7 @@ function CheckoutPage() {
               <CheckCircle2 className="h-10 w-10" />
             </motion.div>
             <h1 className="mt-6 font-display text-3xl font-bold">Order placed!</h1>
-            <p className="mt-2 text-muted-foreground">Your rider is being dispatched · arriving in ~8 min</p>
+            <p className="mt-2 text-muted-foreground">Your rider is being dispatched · arriving in ~10 min</p>
             <div className="mt-6 rounded-2xl bg-muted p-4 text-left text-sm">
               <p className="text-xs uppercase tracking-wider text-muted-foreground">Order ID</p>
               <p className="font-display text-lg font-bold">#NK-{Math.floor(10000 + Math.random() * 90000)}</p>

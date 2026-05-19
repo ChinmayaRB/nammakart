@@ -9,7 +9,7 @@ import { categories, products } from "@/lib/mock-data";
 
 export const Route = createFileRoute("/home")({
   component: HomePage,
-  head: () => ({ meta: [{ title: "Shop fresh — NammaKart AI" }] }),
+  head: () => ({ meta: [{ title: "Shop fresh — KnightKart" }] }),
 });
 
 function HomePage() {

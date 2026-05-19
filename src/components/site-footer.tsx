@@ -19,7 +19,7 @@ export function SiteFooter() {
                 <Sparkles className="h-5 w-5" />
               </div>
               <span className="font-display text-lg font-bold">
-                Namma<span className="text-gradient">Kart</span> AI
+                Knight<span className="text-gradient">Kart</span>
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
@@ -49,7 +49,7 @@ export function SiteFooter() {
           ))}
         </div>
         <div className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-border pt-8 text-xs text-muted-foreground sm:flex-row sm:items-center">
-          <p>© 2026 NammaKart AI Technologies Pvt Ltd. Crafted in Bengaluru.</p>
+          <p>© 2026 KnightKart Technologies Pvt Ltd. Crafted in Bengaluru.</p>
           <div className="flex gap-4">
             <a href="#" className="hover:text-foreground">Privacy</a>
             <a href="#" className="hover:text-foreground">Terms</a>

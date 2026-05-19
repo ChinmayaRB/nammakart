@@ -6,19 +6,20 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import { categories, testimonials } from "@/lib/mock-data";
+import srkAmbassador from "@/assets/srk-ambassador.jpg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
   head: () => ({
     meta: [
-      { title: "NammaKart AI — 10-min Groceries, AI-Smart" },
-      { name: "description", content: "AI-powered instant grocery & smart commerce. Fresh produce delivered in 8 minutes." },
+      { title: "KnightKart — 10-min Groceries, AI-Smart" },
+      { name: "description", content: "AI-powered instant grocery & smart commerce. Fresh produce delivered in 10 minutes." },
     ],
   }),
 });
 
 const stats = [
-  { value: "8 min", label: "Avg. delivery" },
+  { value: "10 min", label: "Avg. delivery" },
   { value: "12M+", label: "Orders shipped" },
   { value: "2,400+", label: "Dark stores" },
   { value: "4.9★", label: "App rating" },
@@ -37,7 +38,7 @@ const faqs = [
   { q: "How is delivery this fast?", a: "We operate hyper-local dark stores within 2km of every customer, so the cart is packed before you finish checking out." },
   { q: "Are prices higher for speed?", a: "No. We match supermarket pricing on staples and beat it on fresh produce via direct farm partnerships." },
   { q: "Where do you currently operate?", a: "Bengaluru, Hyderabad, Mumbai, Delhi NCR and Chennai. New cities every quarter." },
-  { q: "What's NammaKart Pro?", a: "Free unlimited delivery, 10% extra cashback, and exclusive access to flash drops — for ₹99/month." },
+  { q: "What's KnightKart Pro?", a: "Free unlimited delivery, 10% extra cashback, and exclusive access to flash drops — for ₹99/month." },
 ];
 
 function Landing() {
@@ -72,7 +73,7 @@ function Landing() {
               transition={{ delay: 0.05 }}
               className="mt-5 font-display text-5xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl"
             >
-              Groceries in <span className="text-gradient">8 minutes</span>.
+              Groceries in <span className="text-gradient">10 minutes</span>.
               <br />
               Smarter every order.
             </motion.h1>
@@ -82,7 +83,7 @@ function Landing() {
               transition={{ delay: 0.1 }}
               className="mt-5 max-w-lg text-lg text-muted-foreground"
             >
-              NammaKart AI learns your kitchen, predicts your week and stocks your dark store before you tap "add to cart".
+              KnightKart learns your kitchen, predicts your week and stocks your dark store before you tap "add to cart".
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -132,7 +133,7 @@ function Landing() {
                   <span>● ●</span>
                 </div>
                 <p className="mt-3 text-[10px] uppercase opacity-80">Delivering to</p>
-                <p className="text-sm font-bold">Indiranagar · 8 min</p>
+                <p className="text-sm font-bold">Indiranagar · 10 min</p>
                 <div className="mt-4 grid grid-cols-2 gap-2">
                   {["🥭","🥑","🥛","🍓","🥖","🍫"].map((e, i) => (
                     <motion.div
@@ -230,6 +231,76 @@ function Landing() {
         </div>
       </section>
 
+      {/* BRAND AMBASSADOR — SRK */}
+      <section className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6">
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-border bg-gradient-to-br from-primary/15 via-card to-accent/15 shadow-elegant">
+          <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/30 blur-3xl" />
+          <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-accent/25 blur-3xl" />
+
+          <div className="relative grid items-center gap-8 p-8 sm:p-12 lg:grid-cols-2 lg:p-16">
+            <motion.div
+              initial={{ opacity: 0, x: -30 }}
+              whileInView={{ opacity: 1, x: 0 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.7 }}
+            >
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
+                <Sparkles className="h-3.5 w-3.5" /> Brand Ambassador
+              </div>
+              <h2 className="mt-5 font-display text-4xl font-bold leading-tight sm:text-5xl">
+                "Picture <span className="text-gradient">abhi baaki hai</span> —
+                <br /> aur groceries 10 minute mein."
+              </h2>
+              <p className="mt-5 max-w-lg text-muted-foreground">
+                King Khan trusts <span className="font-semibold text-foreground">KnightKart</span> for his
+                kitchen. From Mannat to your home — fresh produce, pantry staples, and late-night cravings,
+                always 10 minutes away.
+              </p>
+              <div className="mt-7 flex flex-wrap items-center gap-3">
+                <Button size="lg" className="rounded-full shadow-glow" asChild>
+                  <Link to="/home">Shop like SRK <ArrowRight className="h-4 w-4" /></Link>
+                </Button>
+                <div className="flex items-center gap-3 rounded-full border border-border bg-card/60 px-4 py-2 backdrop-blur">
+                  <div className="grid h-8 w-8 place-items-center rounded-full bg-primary text-primary-foreground">
+                    <Star className="h-4 w-4 fill-current" />
+                  </div>
+                  <p className="text-xs font-semibold">"My family's favourite kart" — SRK</p>
+                </div>
+              </div>
+            </motion.div>
+
+            <motion.div
+              initial={{ opacity: 0, scale: 0.92 }}
+              whileInView={{ opacity: 1, scale: 1 }}
+              viewport={{ once: true }}
+              transition={{ duration: 0.8 }}
+              className="relative mx-auto w-full max-w-md"
+            >
+              <div className="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-to-tr from-primary/40 to-accent/30 blur-2xl" />
+              <div className="relative overflow-hidden rounded-[2rem] border border-white/20 shadow-elegant">
+                <img
+                  src={srkAmbassador}
+                  alt="Shah Rukh Khan — KnightKart brand ambassador"
+                  loading="lazy"
+                  width={1024}
+                  height={1280}
+                  className="h-full w-full object-cover"
+                />
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl bg-black/40 px-4 py-3 backdrop-blur-xl">
+                  <div>
+                    <p className="text-[10px] uppercase tracking-[0.2em] text-white/70">Brand Ambassador</p>
+                    <p className="font-display text-sm font-bold text-white">Shah Rukh Khan</p>
+                  </div>
+                  <div className="rounded-full bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-foreground">
+                    Limited drop
+                  </div>
+                </div>
+              </div>
+            </motion.div>
+          </div>
+        </div>
+      </section>
+
       {/* TESTIMONIALS */}
       <section className="mx-auto max-w-7xl px-4 py-20 sm:px-6">
         <div className="grid gap-10 lg:grid-cols-[1fr_2fr]">
@@ -276,7 +347,7 @@ function Landing() {
                 Tap. Predict. Delivered.
               </h2>
               <p className="mt-4 max-w-md opacity-90">
-                The full power of NammaKart in your pocket. Voice search, instant reorders, live tracking on a buttery map.
+                The full power of KnightKart in your pocket. Voice search, instant reorders, live tracking on a buttery map.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <button className="flex items-center gap-3 rounded-2xl bg-foreground px-5 py-3 text-background">
