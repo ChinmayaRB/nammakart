@@ -6,6 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import { categories, testimonials } from "@/lib/mock-data";
+import srkAmbassador from "@/assets/srk-ambassador.jpg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
