@@ -6,7 +6,7 @@ import { SiteHeader } from "@/components/site-header";
 import { SiteFooter } from "@/components/site-footer";
 import { Button } from "@/components/ui/button";
 import { categories, testimonials } from "@/lib/mock-data";
-import srkAmbassador from "@/assets/srk-ambassador.jpg";
+import viratAmbassador from "@/assets/virat-ambassador.jpg";
 
 export const Route = createFileRoute("/")({
   component: Landing,
@@ -231,11 +231,11 @@ function Landing() {
         </div>
       </section>
 
-      {/* BRAND AMBASSADOR — SRK */}
+      {/* BRAND AMBASSADOR — VIRAT KOHLI */}
       <section className="relative mx-auto max-w-7xl px-4 py-24 sm:px-6">
-        <div className="relative overflow-hidden rounded-[2.5rem] border border-border bg-gradient-to-br from-primary/15 via-card to-accent/15 shadow-elegant">
+        <div className="relative overflow-hidden rounded-[2.5rem] border border-border bg-gradient-to-br from-primary/20 via-card to-accent/20 shadow-elegant">
           <div className="absolute -left-32 -top-32 h-96 w-96 rounded-full bg-primary/30 blur-3xl" />
-          <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-accent/25 blur-3xl" />
+          <div className="absolute -bottom-32 -right-32 h-96 w-96 rounded-full bg-accent/30 blur-3xl" />
 
           <div className="relative grid items-center gap-8 p-8 sm:p-12 lg:grid-cols-2 lg:p-16">
             <motion.div
@@ -245,26 +245,26 @@ function Landing() {
               transition={{ duration: 0.7 }}
             >
               <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 text-xs font-semibold uppercase tracking-[0.18em] text-primary">
-                <Sparkles className="h-3.5 w-3.5" /> Brand Ambassador
+                <Sparkles className="h-3.5 w-3.5" /> Brand Ambassador · Play Bold
               </div>
               <h2 className="mt-5 font-display text-4xl font-bold leading-tight sm:text-5xl">
-                "Picture <span className="text-gradient">abhi baaki hai</span> —
-                <br /> aur groceries 10 minute mein."
+                "Chase like a <span className="text-gradient">Challenger</span>.
+                <br /> Delivered in 10."
               </h2>
               <p className="mt-5 max-w-lg text-muted-foreground">
-                King Khan trusts <span className="font-semibold text-foreground">KnightKart</span> for his
-                kitchen. From Mannat to your home — fresh produce, pantry staples, and late-night cravings,
-                always 10 minutes away.
+                King Kohli runs on <span className="font-semibold text-foreground">KnightKart</span>. From
+                match-day snacks to Sunday roasts — premium produce, protein and pantry staples,
+                always 10 minutes away. Ee Sala Cup Namde, ee saala kart bhi namde.
               </p>
               <div className="mt-7 flex flex-wrap items-center gap-3">
                 <Button size="lg" className="rounded-full shadow-glow" asChild>
-                  <Link to="/home">Shop like SRK <ArrowRight className="h-4 w-4" /></Link>
+                  <Link to="/home">Shop like Virat <ArrowRight className="h-4 w-4" /></Link>
                 </Button>
                 <div className="flex items-center gap-3 rounded-full border border-border bg-card/60 px-4 py-2 backdrop-blur">
                   <div className="grid h-8 w-8 place-items-center rounded-full bg-primary text-primary-foreground">
                     <Star className="h-4 w-4 fill-current" />
                   </div>
-                  <p className="text-xs font-semibold">"My family's favourite kart" — SRK</p>
+                  <p className="text-xs font-semibold">"My go-to kart on match days" — Virat</p>
                 </div>
               </div>
             </motion.div>
@@ -276,23 +276,23 @@ function Landing() {
               transition={{ duration: 0.8 }}
               className="relative mx-auto w-full max-w-md"
             >
-              <div className="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-to-tr from-primary/40 to-accent/30 blur-2xl" />
+              <div className="absolute inset-0 -z-10 rounded-[2rem] bg-gradient-to-tr from-primary/50 to-accent/40 blur-2xl" />
               <div className="relative overflow-hidden rounded-[2rem] border border-white/20 shadow-elegant">
                 <img
-                  src={srkAmbassador}
-                  alt="Shah Rukh Khan — KnightKart brand ambassador"
+                  src={viratAmbassador}
+                  alt="Virat Kohli — KnightKart brand ambassador"
                   loading="lazy"
                   width={1024}
                   height={1280}
                   className="h-full w-full object-cover"
                 />
-                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl bg-black/40 px-4 py-3 backdrop-blur-xl">
+                <div className="absolute bottom-4 left-4 right-4 flex items-center justify-between rounded-2xl bg-black/50 px-4 py-3 backdrop-blur-xl">
                   <div>
                     <p className="text-[10px] uppercase tracking-[0.2em] text-white/70">Brand Ambassador</p>
-                    <p className="font-display text-sm font-bold text-white">Shah Rukh Khan</p>
+                    <p className="font-display text-sm font-bold text-white">Virat Kohli · #18</p>
                   </div>
-                  <div className="rounded-full bg-primary px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-foreground">
-                    Limited drop
+                  <div className="rounded-full gradient-hero px-3 py-1 text-[10px] font-bold uppercase tracking-wider text-primary-foreground">
+                    Play Bold
                   </div>
                 </div>
               </div>
