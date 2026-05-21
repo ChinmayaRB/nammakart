@@ -25,7 +25,7 @@ const statusStyle: Record<string, string> = {
   Delivered: "bg-success/15 text-success",
 };
 
-const COLORS = ["oklch(0.62 0.17 155)", "oklch(0.82 0.16 75)", "oklch(0.55 0.14 210)", "oklch(0.65 0.2 25)", "oklch(0.5 0.15 290)"];
+const COLORS = ["oklch(0.62 0.17 155)", "oklch(0.82 0.16 75)", "oklch(0.55 0.14 210)", "oklch(0.65 0.2 25)", "oklch(0.5 0.15 150)"];
 
 function AdminDashboard() {
   return (
