@@ -1,11 +1,12 @@
-import { Link, useRouterState } from "@tanstack/react-router";
+import { Link, useRouterState, useNavigate } from "@tanstack/react-router";
 import { motion, AnimatePresence } from "framer-motion";
 import { Search, ShoppingCart, MapPin, Sun, Moon, Menu, X, Sparkles, Heart, LogIn } from "lucide-react";
-import { useEffect, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 import { useCart } from "@/store/cart";
 import { useTheme } from "@/store/theme";
 import { useAuth } from "@/store/auth";
 import { Button } from "@/components/ui/button";
+import { products } from "@/lib/mock-data";
 
 const nav = [
   { to: "/home", label: "Shop" },
@@ -19,9 +20,13 @@ export function SiteHeader({ variant = "default" }: { variant?: "default" | "lan
   const count = items.reduce((s, i) => s + i.qty, 0);
   const user = useAuth((s) => s.user);
   const { theme, toggle } = useTheme();
+  const navigate = useNavigate();
   const pathname = useRouterState({ select: (r) => r.location.pathname });
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
+  const [q, setQ] = useState("");
+  const [focused, setFocused] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
@@ -33,6 +38,40 @@ export function SiteHeader({ variant = "default" }: { variant?: "default" | "lan
     window.addEventListener("scroll", onScroll);
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
+
+  // ⌘K / Ctrl+K to focus search
+  useEffect(() => {
+    const onKey = (e: KeyboardEvent) => {
+      if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === "k") {
+        e.preventDefault();
+        inputRef.current?.focus();
+      }
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, []);
+
+  const suggestions = useMemo(() => {
+    if (!q.trim()) return [];
+    const needle = q.toLowerCase();
+    return products
+      .filter((p) => (p.name + " " + p.brand + " " + p.category).toLowerCase().includes(needle))
+      .slice(0, 6);
+  }, [q]);
+
+  const submitSearch = (query: string) => {
+    const term = query.trim();
+    if (!term) return;
+    try {
+      const raw = localStorage.getItem("nk-recent-search");
+      const list: string[] = raw ? JSON.parse(raw) : [];
+      const next = [term, ...list.filter((x) => x !== term)].slice(0, 6);
+      localStorage.setItem("nk-recent-search", JSON.stringify(next));
+    } catch {}
+    setFocused(false);
+    setQ("");
+    navigate({ to: "/home", search: { q: term } });
+  };
 
   return (
     <motion.header
@@ -61,14 +100,63 @@ export function SiteHeader({ variant = "default" }: { variant?: "default" | "lan
           <span className="text-muted-foreground">· Indiranagar</span>
         </div>
 
-        <nav className="ml-auto hidden items-center gap-1 md:flex">
+        {/* Inline search */}
+        <div className="relative ml-4 hidden flex-1 max-w-md md:block">
+          <form
+            onSubmit={(e) => { e.preventDefault(); submitSearch(q); }}
+            className="flex items-center gap-2 rounded-full border border-border bg-muted/40 px-3 py-1.5 focus-within:border-primary"
+          >
+            <Search className="h-4 w-4 text-muted-foreground" />
+            <input
+              ref={inputRef}
+              value={q}
+              onChange={(e) => setQ(e.target.value)}
+              onFocus={() => setFocused(true)}
+              onBlur={() => setTimeout(() => setFocused(false), 120)}
+              placeholder='Search items…  ⌘K'
+              className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+            />
+            {q && (
+              <button type="button" onClick={() => setQ("")} className="text-muted-foreground hover:text-foreground" aria-label="Clear">
+                <X className="h-4 w-4" />
+              </button>
+            )}
+          </form>
+          <AnimatePresence>
+            {focused && suggestions.length > 0 && (
+              <motion.div
+                initial={{ opacity: 0, y: -4 }}
+                animate={{ opacity: 1, y: 0 }}
+                exit={{ opacity: 0, y: -4 }}
+                className="absolute left-0 right-0 top-full mt-2 overflow-hidden rounded-2xl border border-border bg-popover shadow-elegant"
+              >
+                {suggestions.map((p) => (
+                  <button
+                    key={p.id}
+                    onMouseDown={(e) => { e.preventDefault(); submitSearch(p.name); }}
+                    className="flex w-full items-center gap-3 px-4 py-2.5 text-left text-sm hover:bg-muted"
+                  >
+                    <span className="text-xl">{p.emoji}</span>
+                    <span className="flex-1 truncate">
+                      <span className="font-medium">{p.name}</span>
+                      <span className="ml-2 text-xs text-muted-foreground">{p.brand}</span>
+                    </span>
+                    <span className="text-xs font-semibold text-primary">₹{p.price}</span>
+                  </button>
+                ))}
+              </motion.div>
+            )}
+          </AnimatePresence>
+        </div>
+
+        <nav className="ml-auto hidden items-center gap-1 lg:flex">
           {nav.map((n) => {
             const active = pathname.startsWith(n.to);
             return (
               <Link
                 key={n.to}
                 to={n.to}
-                className={`relative rounded-full px-4 py-2 text-sm font-medium transition-colors ${
+                className={`relative rounded-full px-3 py-2 text-sm font-medium transition-colors ${
                   active ? "text-foreground" : "text-muted-foreground hover:text-foreground"
                 }`}
               >
@@ -86,11 +174,6 @@ export function SiteHeader({ variant = "default" }: { variant?: "default" | "lan
         </nav>
 
         <div className="ml-auto flex items-center gap-1 md:ml-2">
-          <Link to="/home" className="hidden md:block">
-            <Button variant="ghost" size="icon" aria-label="Search">
-              <Search className="h-5 w-5" />
-            </Button>
-          </Link>
           <Link to="/favorites" className="hidden md:block">
             <Button variant="ghost" size="icon" aria-label="Wishlist" className="relative">
               <Heart className="h-5 w-5" />
@@ -161,7 +244,19 @@ export function SiteHeader({ variant = "default" }: { variant?: "default" | "lan
             exit={{ height: 0, opacity: 0 }}
             className="overflow-hidden border-t border-border md:hidden"
           >
-            <div className="space-y-1 px-4 py-3">
+            <div className="space-y-2 px-4 py-3">
+              <form
+                onSubmit={(e) => { e.preventDefault(); submitSearch(q); setOpen(false); }}
+                className="flex items-center gap-2 rounded-full border border-border bg-muted/40 px-3 py-2"
+              >
+                <Search className="h-4 w-4 text-muted-foreground" />
+                <input
+                  value={q}
+                  onChange={(e) => setQ(e.target.value)}
+                  placeholder="Search items…"
+                  className="flex-1 bg-transparent text-sm outline-none placeholder:text-muted-foreground"
+                />
+              </form>
               {nav.map((n) => (
                 <Link
                   key={n.to}
