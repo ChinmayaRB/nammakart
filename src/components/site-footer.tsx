@@ -19,7 +19,7 @@ export function SiteFooter() {
                 <Sparkles className="h-5 w-5" />
               </div>
               <span className="font-display text-lg font-bold">
-                Knight<span className="text-gradient">Kart</span>
+                Namma<span className="text-gradient">Kart</span>
               </span>
             </Link>
             <p className="mt-4 max-w-xs text-sm text-muted-foreground">
