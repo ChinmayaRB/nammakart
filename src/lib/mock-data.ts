@@ -132,6 +132,6 @@ export const liveOrders = [
 
 export const testimonials = [
   { name: "Ananya Iyer", role: "Mom of two, Bengaluru", quote: "Groceries land at my door before my chai is ready. The AI reorder is uncanny — it just knows.", avatar: "👩🏽" },
-  { name: "Karthik Menon", role: "Café Owner", quote: "We restock the café through KnightKart Pro. Fresher produce than the wholesale market, no haggling.", avatar: "👨🏽‍🍳" },
+  { name: "Karthik Menon", role: "Café Owner", quote: "We restock the café through NammaKart Pro. Fresher produce than the wholesale market, no haggling.", avatar: "👨🏽‍🍳" },
   { name: "Divya Shah", role: "Marathon runner", quote: "The nutrition-aware suggestions actually fit my training cycle. Game-changer for meal prep.", avatar: "🏃🏽‍♀️" },
 ];

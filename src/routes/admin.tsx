@@ -8,7 +8,7 @@ import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/admin")({
   component: AdminDashboard,
-  head: () => ({ meta: [{ title: "Operations dashboard — KnightKart" }] }),
+  head: () => ({ meta: [{ title: "Operations dashboard — NammaKart" }] }),
 });
 
 const kpis = [

@@ -12,7 +12,7 @@ export const Route = createFileRoute("/")({
   component: Landing,
   head: () => ({
     meta: [
-      { title: "KnightKart — 10-min Groceries, AI-Smart" },
+      { title: "NammaKart — 10-min Groceries, AI-Smart" },
       { name: "description", content: "AI-powered instant grocery & smart commerce. Fresh produce delivered in 10 minutes." },
     ],
   }),
@@ -38,7 +38,7 @@ const faqs = [
   { q: "How is delivery this fast?", a: "We operate hyper-local dark stores within 2km of every customer, so the cart is packed before you finish checking out." },
   { q: "Are prices higher for speed?", a: "No. We match supermarket pricing on staples and beat it on fresh produce via direct farm partnerships." },
   { q: "Where do you currently operate?", a: "Bengaluru, Hyderabad, Mumbai, Delhi NCR and Chennai. New cities every quarter." },
-  { q: "What's KnightKart Pro?", a: "Free unlimited delivery, 10% extra cashback, and exclusive access to flash drops — for ₹99/month." },
+  { q: "What's NammaKart Pro?", a: "Free unlimited delivery, 10% extra cashback, and exclusive access to flash drops — for ₹99/month." },
 ];
 
 function Landing() {
@@ -83,7 +83,7 @@ function Landing() {
               transition={{ delay: 0.1 }}
               className="mt-5 max-w-lg text-lg text-muted-foreground"
             >
-              KnightKart learns your kitchen, predicts your week and stocks your dark store before you tap "add to cart".
+              NammaKart learns your kitchen, predicts your week and stocks your dark store before you tap "add to cart".
             </motion.p>
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -252,7 +252,7 @@ function Landing() {
                 <br /> Delivered in 10."
               </h2>
               <p className="mt-5 max-w-lg text-muted-foreground">
-                King Kohli runs on <span className="font-semibold text-foreground">KnightKart</span>. From
+                King Kohli runs on <span className="font-semibold text-foreground">NammaKart</span>. From
                 match-day snacks to Sunday roasts — premium produce, protein and pantry staples,
                 always 10 minutes away. Ee Sala Cup Namde, ee saala kart bhi namde.
               </p>
@@ -280,7 +280,7 @@ function Landing() {
               <div className="relative overflow-hidden rounded-[2rem] border border-white/20 shadow-elegant">
                 <img
                   src={viratAmbassador}
-                  alt="Virat Kohli — KnightKart brand ambassador"
+                  alt="Virat Kohli — NammaKart brand ambassador"
                   loading="lazy"
                   width={1024}
                   height={1280}
@@ -347,7 +347,7 @@ function Landing() {
                 Tap. Predict. Delivered.
               </h2>
               <p className="mt-4 max-w-md opacity-90">
-                The full power of KnightKart in your pocket. Voice search, instant reorders, live tracking on a buttery map.
+                The full power of NammaKart in your pocket. Voice search, instant reorders, live tracking on a buttery map.
               </p>
               <div className="mt-7 flex flex-wrap gap-3">
                 <button className="flex items-center gap-3 rounded-2xl bg-foreground px-5 py-3 text-background">

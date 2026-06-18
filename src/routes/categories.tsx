@@ -9,7 +9,7 @@ import { cn } from "@/lib/utils";
 
 export const Route = createFileRoute("/categories")({
   component: CategoriesPage,
-  head: () => ({ meta: [{ title: "Categories — KnightKart" }] }),
+  head: () => ({ meta: [{ title: "Categories — NammaKart" }] }),
 });
 
 function CategoriesPage() {

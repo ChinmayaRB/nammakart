@@ -8,7 +8,7 @@ import { useCart, cartTotals } from "@/store/cart";
 
 export const Route = createFileRoute("/cart")({
   component: CartPage,
-  head: () => ({ meta: [{ title: "Your cart — KnightKart" }] }),
+  head: () => ({ meta: [{ title: "Your cart — NammaKart" }] }),
 });
 
 function CartPage() {

@@ -11,8 +11,8 @@ import { useAuth } from "@/store/auth";
 export const Route = createFileRoute("/signup")({
   head: () => ({
     meta: [
-      { title: "Create account — KnightKart" },
-      { name: "description", content: "Join KnightKart for 10-minute grocery delivery, AI bundles and member-only prices." },
+      { title: "Create account — NammaKart" },
+      { name: "description", content: "Join NammaKart for 10-minute grocery delivery, AI bundles and member-only prices." },
     ],
   }),
   component: SignupPage,
@@ -105,7 +105,7 @@ function SignupPage() {
         >
           <div className="flex items-center gap-2">
             <Sparkles className="h-5 w-5" />
-            <span className="font-display text-lg font-bold">Join KnightKart</span>
+            <span className="font-display text-lg font-bold">Join NammaKart</span>
           </div>
           <div>
             <h2 className="font-display text-4xl font-bold leading-tight">

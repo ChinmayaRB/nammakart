@@ -9,7 +9,7 @@ import { useCart } from "@/store/cart";
 import { products } from "@/lib/mock-data";
 
 export const Route = createFileRoute("/favorites")({
-  head: () => ({ meta: [{ title: "Your Favorites — KnightKart" }] }),
+  head: () => ({ meta: [{ title: "Your Favorites — NammaKart" }] }),
   component: FavoritesPage,
 });
 
