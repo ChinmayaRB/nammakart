@@ -72,10 +72,10 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "KnightKart — 10-min Groceries, AI-Smart" },
+      { title: "NammaKart — 10-min Groceries, AI-Smart" },
       { name: "description", content: "AI-powered instant grocery & smart commerce. Fresh produce, daily essentials and premium brands delivered in 10 minutes." },
-      { name: "author", content: "KnightKart" },
-      { property: "og:title", content: "KnightKart — 10-min Groceries, AI-Smart" },
+      { name: "author", content: "NammaKart" },
+      { property: "og:title", content: "NammaKart — 10-min Groceries, AI-Smart" },
       { property: "og:description", content: "Fresh produce, daily essentials and premium brands delivered in 10 minutes — powered by AI demand prediction." },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
