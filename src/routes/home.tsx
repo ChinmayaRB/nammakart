@@ -39,7 +39,7 @@ function HomePage() {
   useEffect(() => {
     const t = setTimeout(() => {
       if (q !== urlQ) {
-        navigate({ search: (prev) => ({ ...prev, q }), replace: true });
+        navigate({ search: (prev: any) => ({ ...prev, q }), replace: true });
       }
     }, 250);
     return () => clearTimeout(t);
@@ -105,7 +105,7 @@ function HomePage() {
           <div className="mt-3 flex flex-wrap items-center gap-2">
             {catLabel && (
               <button
-                onClick={() => navigate({ search: (p) => ({ ...p, cat: "" }), replace: true })}
+                onClick={() => navigate({ search: (p: any) => ({ ...p, cat: "" }), replace: true })}
                 className="inline-flex items-center gap-1.5 rounded-full bg-primary/10 px-3 py-1 text-xs font-semibold text-primary"
               >
                 {catLabel} <X className="h-3 w-3" />
@@ -215,7 +215,7 @@ function HomePage() {
                 {categories.map((c, i) => (
                   <motion.button
                     key={c.id}
-                    onClick={() => navigate({ search: (p) => ({ ...p, cat: c.id }), replace: true })}
+                    onClick={() => navigate({ search: (p: any) => ({ ...p, cat: c.id }), replace: true })}
                     initial={{ opacity: 0, y: 10 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: i * 0.02 }}
