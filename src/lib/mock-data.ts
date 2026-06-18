@@ -37,7 +37,15 @@ export const categories = [
   { id: "electronics", name: "Electronics", emoji: "🎧", color: "from-indigo-400/30 to-fuchsia-500/30" },
   { id: "kitchen", name: "Kitchen", emoji: "🍳", color: "from-fuchsia-600/30 to-sky-300/30" },
   { id: "gifts", name: "Gifts & Party", emoji: "🎁", color: "from-purple-400/30 to-blue-400/30" },
+  { id: "organic", name: "Organic & Vegan", emoji: "🌱", color: "from-violet-500/30 to-blue-400/30" },
+  { id: "international", name: "International", emoji: "🌍", color: "from-fuchsia-500/30 to-sky-400/30" },
+  { id: "cleaning", name: "Cleaning Supplies", emoji: "🧹", color: "from-indigo-400/30 to-blue-400/30" },
+  { id: "fitness", name: "Sports & Fitness", emoji: "🏋️", color: "from-fuchsia-600/30 to-sky-300/30" },
+  { id: "toys", name: "Toys & Games", emoji: "🧸", color: "from-purple-400/30 to-blue-400/30" },
+  { id: "books", name: "Books & Magazines", emoji: "📚", color: "from-violet-500/30 to-indigo-400/30" },
+  { id: "personalcare", name: "Personal Care", emoji: "🪥", color: "from-fuchsia-500/30 to-sky-400/30" },
 ];
+
 
 export const products: Product[] = [
   { id: "p1", name: "Alphonso Mangoes", brand: "Farm Fresh", price: 349, mrp: 499, unit: "1 kg", eta: "10 min", rating: 4.8, category: "fruits", emoji: "🥭", tag: "Bestseller" },
